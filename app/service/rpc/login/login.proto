@@ -1,0 +1,17 @@
+syntax = "proto3";
+package login;
+option go_package = "/app/service/rpc/login";
+
+message LoginReq{
+    string uid=1;
+    string password=2;
+}
+
+message LoginRes{
+    bool ok=1;
+    string msg=2;
+}
+
+service Login{
+    rpc Login(LoginReq) returns(LoginRes);
+}

@@ -1,0 +1,41 @@
+syntax = "v1"
+
+info (
+	title: "chess-api"
+	desc: "chess-api"
+	author: "StellarisW"
+	email: "744637972@qq.com"
+)
+
+type (
+	registerReq {
+		Uid      string `form:"uid"`
+		Nickname string `form:"nickname"`
+		Password string `form:"password"`
+	}
+	registerRes {
+		Ok  bool   `json:"success"`
+		Msg string `json:"msg"`
+	}
+
+	loginReq {
+		Uid      string `form:"uid"`
+		Password string `form:"password"`
+	}
+	loginRes {
+		Ok  bool   `json:"success"`
+		Msg string `json:"msg"`
+	}
+)
+
+service chess-api {
+	@doc(
+		summary: "user services"
+	)
+	@handler Register
+	post /api/register(registerReq) returns(registerRes)
+
+	@handler Login
+	post /api/login(loginReq) returns(loginRes)
+	
+}

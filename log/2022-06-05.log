@@ -1,0 +1,31 @@
+2022-06-05 19:55:17.440 [FATA] {d827420f6db7f5164d00242b014ec344} Connect to Mysql server failed, err: master.Ping failed: Error 1049: Unknown database 'xxx' 
+Stack:
+1.  main/boot.ORMSetup
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Coding/Jetbrains/Goland/src/github.com/Redrock/final/boot/orm.go:12
+2.  main.init.0
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Coding/Jetbrains/Goland/src/github.com/Redrock/final/main.go:15
+ 
+2022-06-05 19:58:22.049 [FATA] {04fa6e0e98b7f5167c1cb34f72bb91d2} Connect to Mysql server failed, err: master.Ping failed: Error 1049: Unknown database 'xxx' 
+Stack:
+1.  main/boot.ORMSetup
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Coding/Jetbrains/Goland/src/github.com/Redrock/final/boot/orm.go:12
+2.  main.init.0
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Coding/Jetbrains/Goland/src/github.com/Redrock/final/main.go:14
+ 
+2022-06-05 19:59:33.411 [INFO] {d8adc6aaa8b7f5169f01833acb7605a5} Initialize MySQL server successfully 
+2022-06-05 19:59:33.606 [FATA] {44ba70c4a8b7f516a101833a85c7114f} Connect to Redis server failed, err: Redis Client Do failed with arguments "[SET test test]": ERR illegal address: 125.86.164.55:2627
+Stack:
+1.  main/boot.RedisSetup
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Coding/Jetbrains/Goland/src/github.com/Redrock/final/boot/redis.go:12
+2.  main.init.0
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Coding/Jetbrains/Goland/src/github.com/Redrock/final/main.go:15
+ 
+2022-06-05 20:01:55.039 [INFO] {78046d65c9b7f5163f8f4d2bbf959cfd} Initialize MySQL server successfully 
+2022-06-05 20:01:55.237 [INFO] {cccc99b2c9b7f516408f4d2b78dbbe12} Initialize Redis instance successfully 
+2022-06-05 20:01:57.311 {7bcb33e86dccab8c30c154fa32399ea6} 
+2022-06-05 20:02:25.717 [INFO] {c883a6c8d0b7f516cffdcc68678922ef} Initialize MySQL server successfully 
+2022-06-05 20:02:25.897 [INFO] {d00d1ad7d0b7f516d0fdcc68d9ddc43f} Initialize Redis instance successfully 
+2022-06-05 20:02:27.983 {40d86fd10baad90ef9b8f46f55cf814d} 
+2022-06-05 20:04:33.698 [INFO] {4c28e093eeb7f516b9b22833fc12a09b} Initialize MySQL server successfully 
+2022-06-05 20:04:33.886 [INFO] {9c056ca3eeb7f516bab22833012820a6} Initialize Redis instance successfully 
+2022-06-05 20:04:35.972 {df38b71afaf28855f0620a0053341144} 

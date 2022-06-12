@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+#  chess-web:
+#    build: .
+#    container_name: chess-web
+#    restart: always
+#    ports:
+#      - "8086:8086"
+#    networks:
+#      - chess_net
+  chess-api:
+    build: app/service/api
+    container_name: chess-api
+    restart: always
+    ports:
+      - "9089:9089"
+    environment:
+      TZ: Asia/Shanghai
+    networks:
+      - chess_net
+  register:
+    build: app/service/rpc/register
+    container_name: register-rpc
+    restart: always
+    ports:
+      - "10011:10011"
+    networks:
+      - chess_net
+  login:
+    build: app/service/rpc/login
+    container_name: login-rpc
+    restart: always
+    ports:
+      - "10012:10012"
+    networks:
+      - chess_net
+
+networks:
+  chess_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

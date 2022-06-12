@@ -1,0 +1,18 @@
+Name: login.rpc
+ListenOn: 0.0.0.0:10012
+
+Consul:
+  Host: 124.222.2.109:9086
+  Key: login.rpc
+  Meta:
+    Protocol: grpc
+  Tag:
+    - tag
+    - rpc
+
+Telemetry:
+  Name: login-rpc
+  Endpoint:  http://124.222.2.109:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+

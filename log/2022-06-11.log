@@ -1,0 +1,8 @@
+2022-06-11 21:06:34.119 [INFO] {b408e234cc92f71691966c4e72a2353a} Initialize MySQL server successfully 
+2022-06-11 21:06:34.310 [FATA] {e0bee850cc92f71693966c4eb476a0c8} Connect to Redis server failed, err: Redis Client Do failed with arguments "[SET test test]": ERR illegal address: 125.86.164.146:1715
+Stack:
+1.  main/boot.RedisSetup
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Project/chess/boot/redis.go:12
+2.  main.init.0
+    C:/Users/Stellaris_W/OneDrive - stu.cqupt.edu.cn/桌面/Project/chess/main.go:14
+ 

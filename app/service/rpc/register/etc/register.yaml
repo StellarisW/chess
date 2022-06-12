@@ -1,0 +1,21 @@
+Name: register.rpc
+ListenOn: 0.0.0.0:10011
+#Etcd:
+#  Hosts:
+#  - 127.0.0.1:2379
+#  Key: register.rpc
+Consul:
+  Host: xxx:9086 # consul endpoint
+  Key: register.rpc # 注册到consul的服务名字
+  Meta:
+    Protocol: grpc
+  Tag:
+    - tag
+    - rpc
+
+Telemetry:
+  Name: register-rpc
+  Endpoint:  http://xxx:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+

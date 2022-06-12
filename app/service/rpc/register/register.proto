@@ -1,0 +1,18 @@
+syntax = "proto3";
+package register;
+option go_package = "/app/service/rpc/register";
+
+message RegisterReq{
+    string uid=1;
+    string nickname=2;
+    string password=3;
+}
+
+message RegisterRes{
+    bool ok=1;
+    string msg=2;
+}
+
+service Register{
+    rpc Register(RegisterReq) returns(RegisterRes);
+}

@@ -1,0 +1,26 @@
+database:
+  default:
+    type:   'mysql'
+    host:   'sh-cynosdbmysql-grp-me2qp1sq.sql.tencentcdb.com'
+    port:   '22649'
+    user:   'root'
+    pass:   'Wx567110#mysql'
+    name:   'chess'
+    timezone:   'Local'
+    maxIdle:    '30'
+    maxOpen:    '300'
+    maxLifetime:    '30s'
+redis:
+  default:
+    address:    'r-uf67kreikomkui4shupd.redis.rds.aliyuncs.com:6379'
+    pass:       'Wx567110#redis'
+    db:         4
+    minIdle:    0
+    MaxIdle:    100
+    maxActive:  10000
+    idleTimeout: "30s"
+    maxConnLifetime: "3m"
+    waitTimeout: "30s"
+    dialTimeout: "30s"
+    readTimeout: "30s"
+    writeTimeout: "30s"

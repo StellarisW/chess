@@ -1,0 +1,19 @@
+Name: chess-api
+Host: 0.0.0.0
+Port: 9089
+
+Telemetry:
+  Name: chess-api
+  Endpoint:  http://xxx:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
+
+
+# consul://[user:passwd]@host/service?param=value'
+# 类似这样的格式
+Register:
+  Target: consul://xxx:9086/register.rpc?wait=10s
+Login:
+  Target: consul://xxx:9086/login.rpc?wait=10s
+# Check:
+#  Target: consul://127.0.0.1:8500/check.rpc?wait=14s
