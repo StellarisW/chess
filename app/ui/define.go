@@ -1,10 +1,3 @@
-/**
- * 中国象棋
- * Designed by wqh, Version: 1.0
- * Copyright (C) 2020 www.wangqianhong.com
- * 常用定义
- */
-
 package ui
 
 const (

@@ -2,12 +2,11 @@ package logic
 
 import (
 	"context"
-	"github.com/gogf/gf/v2/frame/g"
-	"main/app/service/rpc/login/app/service/rpc/login"
-
 	"main/app/service/api/internal/svc"
 	"main/app/service/api/internal/types"
+	"main/app/service/rpc/login/app/service/rpc/login"
 
+	"github.com/gogf/gf/v2/frame/g"
 	"github.com/zeromicro/go-zero/core/logx"
 )
 

@@ -3,6 +3,10 @@ package ui
 import (
 	"bytes"
 	"fmt"
+	"image"
+	"image/color"
+	_ "image/png"
+
 	"github.com/golang/freetype/truetype"
 	"github.com/hajimehoshi/ebiten"
 	"github.com/hajimehoshi/ebiten/audio"
@@ -11,9 +15,6 @@ import (
 	"github.com/hajimehoshi/ebiten/inpututil"
 	"github.com/hajimehoshi/ebiten/text"
 	"golang.org/x/image/font"
-	"image"
-	"image/color"
-	_ "image/png"
 )
 
 //Game 象棋窗口
@@ -207,58 +208,32 @@ func (g *Game) clickSquare(screen *ebiten.Image, sq int) {
 			if g.singlePosition.makeMove(mv) {
 				g.mvLast = mv
 				g.sqSelected = 0
-				//检查重复局面
-				vlRep := g.singlePosition.repStatus(3)
 				if g.singlePosition.isMate() {
 					//如果分出胜负，那么播放胜负的声音，并且弹出不带声音的提示框
 					g.playAudio(MusicGameWin)
 					g.showValue = "Your Win!"
 					g.bGameOver = true
-				} else if vlRep > 0 {
-					vlRep = g.singlePosition.repValue(vlRep)
-					if vlRep > WinValue {
-						g.playAudio(MusicGameLose)
-						g.showValue = "Your Lose!"
-					} else {
-						if vlRep < -WinValue {
-							g.playAudio(MusicGameWin)
-							g.showValue = "Your Win!"
-						} else {
-							g.playAudio(MusicGameWin)
-							g.showValue = "Your Draw!"
-						}
-					}
-					g.bGameOver = true
-				} else if g.singlePosition.nMoveNum > 100 {
-					g.playAudio(MusicGameWin)
-					g.showValue = "Your Draw!"
-					g.bGameOver = true
 				} else {
 					if g.singlePosition.checked() {
 						g.playAudio(MusicJiang)
 					} else {
-						if g.singlePosition.captured() {
-							g.playAudio(MusicEat)
-							g.singlePosition.setIrrev()
-						} else {
-							g.playAudio(MusicPut)
-						}
+						g.playAudio(MusicPut)
 					}
-					//c := websocket.GetUserClient(101, "744637971")
-					//_, data, _ := c.Socket.ReadMessage()
-					//json, _ := gjson.DecodeToJson(data)
-					//m := json.Map()
-					x, y := ebiten.CursorPosition()
-					x = Left + (x-BoardEdge)/SquareSize
-					y = Top + (y-BoardEdge)/SquareSize
-					g.clickSquare(screen, squareXY(x, y))
 				}
-			} else {
-				g.playAudio(MusicJiang) //播放被将军的声音
+				//c := websocket.GetUserClient(101, "744637971")
+				//_, data, _ := c.Socket.ReadMessage()
+				//json, _ := gjson.DecodeToJson(data)
+				//m := json.Map()
+				x, y := ebiten.CursorPosition()
+				x = Left + (x-BoardEdge)/SquareSize
+				y = Top + (y-BoardEdge)/SquareSize
+				g.clickSquare(screen, squareXY(x, y))
 			}
+		} else {
+			g.playAudio(MusicJiang) //播放被将军的声音
 		}
-		//如果根本就不符合走法(例如马不走日字)，那么不做任何处理
 	}
+	//如果根本就不符合走法(例如马不走日字)，那么不做任何处理
 }
 
 //playAudio 播放音效
